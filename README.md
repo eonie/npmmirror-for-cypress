@@ -10,14 +10,18 @@ https://registry.npmmirror.com/-/binary/cypress/8.7.0/darwin-x64/cypress.zip
 ```
 ## 如何使用
 使用 docker 镜像部署，最好部署在服务器上，方便项目组内的其他人也可以使用。
+```
+docker run -d --name=npmmirror-for-cypress -p 8090:8090 --restart=always eonie/npmmirror-for-cypress
+```
 
 前端工程中创建 `.npmrc` 文件, 在文件中配置 `CYPRESS_DOWNLOAD_MIRROR` 环境变量
 
 ```
 CYPRESS_DOWNLOAD_MIRROR=http://<server>:<port>
 ```
+> 如果不想自己搭建服务，也可以使用 `https://www.eonie.tk` 作为镜像源，不过不保证永久可用。
 
-接下来就可以愉快的安装了， 享受闪电般的速度。
+接下来就可以享受闪电般的速度啦。
 
 
 ### 其他问题
